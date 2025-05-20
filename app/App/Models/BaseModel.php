@@ -1,15 +1,16 @@
 <?php
+
 namespace App\Models;
 
 use Core\Database;
 use PDO;
 
-class BaseModel
+abstract class BaseModel
 {
-    protected $db;
+    protected PDO $db;
 
     public function __construct()
     {
-        $this->$db = Database::getInstance();
+        $this->db = Database::getInstance();
     }
 }
